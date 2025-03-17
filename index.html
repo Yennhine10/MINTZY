@@ -25,6 +25,101 @@
         <link href="css/aos.css" rel="stylesheet">
 
         <link href="css/templatemo-nomad-force.css" rel="stylesheet">
+        <style>
+            .portfolio-thumb {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+        
+            .portfolio-thumb img {
+                width: 100%;
+                height: 300px; /* Giữ ảnh đồng nhất */
+                object-fit: cover;
+                transition: transform 0.3s ease-in-out;
+                border-radius: 10px;
+            }
+        
+            .portfolio-thumb img:hover {
+                transform: scale(1.05); /* Hiệu ứng zoom nhẹ khi hover */
+            }
+        
+            .portfolio-info {
+                text-align: center;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 0 0 10px 10px;
+            }
+        
+            .portfolio-title {
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            .news-thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        background: #fff;
+    }
+
+    .news-thumb:hover {
+        transform: scale(1.03);
+    }
+
+    .news-thumb img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .news-thumb:hover img {
+        opacity: 0.9;
+    }
+
+    .news-category {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .news-text-info {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .news-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .news-title-link {
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .news-title-link:hover {
+        color: #ff6f61;
+    }
+
+    .text-muted {
+        font-size: 14px;
+        color: #6c757d;
+    }
+    
+    
+        </style>
 <!--
 
 trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23 tháng 2 năm 2025
@@ -74,6 +169,9 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
                             <li class="nav-item">
                                 <a class="nav-link" href="#about">Giới Thiệu</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sp">Sản Phẩm</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#portfolio">Công Dụng & Thành Phần</a>
@@ -90,66 +188,73 @@ trang web được thiết kế bởi Lâm Deverloper hoàn thành vào ngày 23
                     </div>
                 </div>
             </nav>
-
             <section class="news section-padding pb-0" id="about">
                 <div class="container mb-5 pb-lg-5">
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="mb-3" data-aos="fade-up">Giới thiệu về hủ hít mũi</h2>
+                        <div class="col-12 text-center">
+                            <h2 class="mb-4" data-aos="fade-up">Giới thiệu về hủ hít mũi</h2>
                         </div>
-
-                        <div class="col-lg-6 col-12 mt-3 mb-lg-5">
-                            <p class="me-4" data-aos="fade-up" data-aos-delay="300"> Lấy cảm hứng từ các bài thuốc dân gian mà bà và mẹ luôn tin dùng, hủ hít thông mũi thảo dược Mintzy ra đời như một giải pháp hiện đại, nhẹ nhàng và an toàn, giúp bạn chăm sóc sức khỏe đường hô hấp mỗi ngày.
-                                Với thành phần 100% thảo dược thiên nhiên từ Việt Nam, Mintzy mang đến sự kết hợp hoàn hảo giữa tinh hoa thảo dược truyền thống và hiệu quả chăm sóc sức khỏe hiện đại.
-                                ✨ Mang trong mình sứ mệnh tôn vinh giá trị thảo dược truyền thống, Mintzy không chỉ là giải pháp chăm sóc sức khỏe, mà còn là cầu nối đưa lối sống lành mạnh và bền vững lan tỏa đến cộng đồng. 🌿
-                               </p>
-
+            
+                        <div class="about-content">
+                            <div class="about-box" data-aos="fade-up" data-aos-delay="300">
+                                <p>
+                                    Lấy cảm hứng từ <strong class="text-success">các bài thuốc dân gian</strong> mà bà và mẹ luôn tin dùng, 
+                                    hủ hít thông mũi thảo dược <strong class="text-danger">Mintzy</strong> ra đời như một giải pháp hiện đại, 
+                                    nhẹ nhàng và an toàn, giúp bạn chăm sóc sức khỏe đường hô hấp mỗi ngày.
+                                </p>
+                                <p>
+                                    Với thành phần <strong class="text-success">100% thảo dược thiên nhiên</strong> từ Việt Nam, Mintzy mang đến sự 
+                                    kết hợp hoàn hảo giữa tinh hoa thảo dược truyền thống và hiệu quả chăm sóc sức khỏe hiện đại. 🌿 ✨
+                                </p>
+                            </div>
+            
+                            <div class="about-box" data-aos="fade-up" data-aos-delay="500">
+                                <p>
+                                    🌱 <strong class="text-success">Thiên nhiên là chìa khóa sức khỏe bền lâu.</strong> 
+                                    Chúng tôi cam kết mang đến sự tinh túy từ thảo dược Việt Nam trong từng sản phẩm, 
+                                    mang lại hiệu quả tối ưu và an toàn cho sức khỏe. 
+                                </p>
+                                <p>
+                                    Không chỉ là sự lựa chọn chăm sóc cá nhân, sản phẩm của chúng tôi còn là 
+                                    <strong class="text-danger">món quà ý nghĩa</strong>, gửi gắm sự quan tâm và chăm sóc đến những người thân yêu. 💚
+                                </p>
+                            </div>
                         </div>
-
-                        <div class="col-lg-6 col-12 mt-lg-3 mb-lg-5">
-                            <p data-aos="fade-up" data-aos-delay="500">  🌱 Thiên nhiên là chìa khóa sức khỏe bền lâu.
-                                Chúng tôi cam kết mang đến sự tinh túy từ thảo dược Việt Nam trong từng sản phẩm, mang lại hiệu quả tối ưu và an toàn cho sức khỏe. Không chỉ là sự lựa chọn chăm sóc cá nhân, sản phẩm của chúng tôi còn là món quà ý nghĩa, gửi gắm sự quan tâm và chăm sóc đến những người thân yêu.</p>
-                        </div>
-
                     </div>
                 </div>
             </section>
             
-            <section class="section-padding" id="#">
+            
+            <section class="section-padding" id="sp">
                 <div class="container">
                     <div class="row">
-
                         <div class="col-12">
                             <h2 class="mb-5 text-center" data-aos="fade-up">Sản phẩm</h2>
                         </div>
-
+            
                         <div class="col-lg-6 col-12">
                             <div class="portfolio-thumb mb-5" data-aos="fade-up">
-                                <a href="MENU/2.png" class="image-popup">
-                                    <img src="MENU/2.png" class="img-fluid portfolio-image" alt="front ">
+                                <a href="MENU/222.jpg" class="image-popup">
+                                    <img src="MENU/222.jpg" class="img-fluid portfolio-image" alt="Mintzy mini">
                                 </a>
-
                                 <div class="portfolio-info">                     
-                                    <h3 class="portfolio-title mb-0">Mintzy mini </h3>   
-                                    <h5 class="portfolio-title ">15.000VNĐ</h5>                                    
+                                    <h3 class="portfolio-title mb-0">Mintzy mini</h3>   
+                                    <h5 class="portfolio-title">15.000VNĐ</h5>                                    
                                 </div>
                             </div> 
                         </div>
-
+            
                         <div class="col-lg-6 col-12">
                             <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
-                                <a href="MENU/1.png" class="image-popup">
-                                    <img src="MENU/1.png" class="img-fluid portfolio-image" alt="back">
+                                <a href="MENU/333.jpg" class="image-popup">
+                                    <img src="MENU/333.jpg" class="img-fluid portfolio-image" alt="Mintzy medium">
                                 </a>
-
                                 <div class="portfolio-info">                     
-                                    <h3 class="portfolio-title mb-0 ">Mintzy medium</h3>
-                                    <h5 class="portfolio-title ">39.000VNĐ</h5>
+                                    <h3 class="portfolio-title mb-0">Mintzy medium</h3>
+                                    <h5 class="portfolio-title">39.000VNĐ</h5>
                                 </div>
                             </div> 
-                            </div> 
-                        </div>
-
+                        </div> 
                     </div>
                 </div>
             </section>
@@ -260,30 +365,29 @@ trình chiếu hình ảnh các món trà
 <section class="news section-padding" id="news">
     <div class="container">
         <div class="row">
-
             <div class="col-12">
                 <h2 class="mb-5 text-center" data-aos="fade-up">Tin Tức & Sự Kiện</h2>
             </div>
 
-            <div class="col-lg-4 col-12 mb-5">
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
                 <div class="news-thumb" data-aos="fade-up">
-                    <a href="NEW/a.jpg" class="news-image-hover news-image-hover-warning">
-                        <img src="NEW/a.jpg" class="img-fluid large-news-image news-image" alt="">
+                    <a href="NEW/a.jpg">
+                        <img src="NEW/a.jpg" class="img-fluid news-image" alt="Tuyết Giao hợp tác">
                     </a>
                     <div class="news-category bg-warning text-white">HOT</div>
                     <div class="news-text-info">
                         <h5 class="news-title">
                             <p class="news-title-link">Lần đầu tiên KOLs Tuyết Giao hợp tác cùng sản phẩm</p>
                         </h5>
-                        <span class="text-muted">22 giờ</span>
+                        <span class="text-muted">22 giờ trước</span>
                     </div>
                 </div> 
             </div>
 
-            <div class="col-lg-4 col-12 mb-5">
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
                 <div class="news-thumb" data-aos="fade-up">
-                    <a href="NEW/b.jpg" class="news-image-hover news-image-hover-primary">
-                        <img src="NEW/b.jpg" class="img-fluid large-news-image news-image" alt="">
+                    <a href="NEW/b.jpg">
+                        <img src="NEW/b.jpg" class="img-fluid news-image" alt="Sự kiện ra mắt bao bì mới">
                     </a>
                     <div class="news-category bg-primary text-white">News</div>
                     <div class="news-text-info">
@@ -295,10 +399,10 @@ trình chiếu hình ảnh các món trà
                 </div> 
             </div>
 
-            <div class="col-lg-4 col-12 mb-5">
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
                 <div class="news-thumb" data-aos="fade-up">
-                    <a href="NEW/c.jpg" class="news-image-hover news-image-hover-success">
-                        <img src="NEW/c.jpg" class="img-fluid large-news-image news-image" alt="">
+                    <a href="NEW/c.jpg">
+                        <img src="NEW/c.jpg" class="img-fluid news-image" alt="Người dùng đánh giá sản phẩm mới">
                     </a>
                     <div class="news-category bg-success text-white">Review</div>
                     <div class="news-text-info">
@@ -309,7 +413,6 @@ trình chiếu hình ảnh các món trà
                     </div>
                 </div> 
             </div>
-
         </div>
     </div>
 </section>
@@ -334,7 +437,7 @@ trình chiếu hình ảnh các món trà
 
                                 <!-- Địa chỉ -->
                                 <p>
-                                    <strong>Địa chỉ:</strong> Vi Anh, Đường Vườn Mận, Bình Thủy, Cần Thơ
+                                    <strong>Địa chỉ:</strong> Nhà trọ Vi Anh, Đường Vườn Mận, Bình Thủy, Cần Thơ
                                 </p>
 
                                 <!-- Số điện thoại -->
@@ -383,13 +486,13 @@ trình chiếu hình ảnh các món trà
             <div class="container">
                 <div class="row">
 
-                    <div class="col-12">
+                    <div class="col-8">
                         <h5 class="text-white">
-                            <i class="bi-geo-alt-fill me-2"></i>
-                            Đường Vườn Mận, Bình Thủy, Cần Thơ
+                           
+                            Nhà trọ Vi Anh, Đường Vườn Mận, Bình Thủy, Cần Thơ
                         </h5>
 
-                        <a href="mailto: mintzy2809@gmail.com" class="custom-link mt-3 mb-5">
+                        <a href="mailto: mintzy2809@gmail.com" class="custom-link">
                             mintzy2809@gmail.com                     </a>
                     </div>
 
